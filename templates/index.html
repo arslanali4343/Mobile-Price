@@ -1,0 +1,100 @@
+<!-- This is GUI for Breast Cancer Detection Application Using Machine Learning Classifer -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+  <style>
+    /* CSS code for button */
+    body {
+      background-image: url('C:/Users/Arslan Mushtaq/Videos/deploy/static/images/world.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Show Indian AI Hospital banner-->
+  <div>
+    <img src="C:/Users/Arslan Mushtaq/Videos/deploy/static/images/mobile price.jpg" class="w3-border w3-padding" alt="Indian AI Hospital" style="width:100%">
+  </div>
+ 
+ 
+ <div class="login">
+	
+    <!-- Get input for predict the cancer -->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1>Enter the value of tumor features >>></h1>
+        
+    	<input type="text" name="battery_power" placeholder="battery power" required="required" />
+        <input type="text" name="blue" placeholder="blue" required="required" />
+		<input type="text" name="clock_speed" placeholder="clock speed" required="required" />
+		<input type="text" name="dual_sim" placeholder="dual sim" required="required" />
+		<br>
+        <input type="text" name="fc" placeholder="fc" required="required" />
+		<input type="text" name="four_g" placeholder="four g" required="required" />
+    	<input type="text" name="int_memory" placeholder="int_memory" required="required" />
+        <input type="text" name="m_dep" placeholder="m dep" required="required" />
+        <br>
+		<input type="text" name="mobile wt" placeholder="mobile wt" required="required" />
+    	<input type="text" name="n_cores" placeholder="n_cores" required="required" />
+        <input type="text" name="pc" placeholder="pc" required="required" />
+		<input type="text" name="px_height" placeholder="px height" required="required" />
+		<br>
+    	<input type="text" name="ram" placeholder="ram" required="required" />
+        <input type="text" name="sc_h" placeholder="sc h" required="required" />
+		<input type="text" name="sc_w" placeholder="sc w" required="required" />
+    	<input type="text" name="talk_time" placeholder="talk time" required="required" />
+    	<br>
+        <input type="text" name="three_g" placeholder="three g" required="required" />
+		<input type="text" name="touch_screen" placeholder="touch screen" required="required" />
+    	<input type="text" name="wifi" placeholder="wifi" required="required" />
+        <input type="text" name="price_range" placeholder="price range" required="required" />
+        <br>
+        <br>
+        
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" href="https://www.kaggle.com/arslanali4343/mobile-price-classification" target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Price</strong></button></a>
+        </div>
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h1>{{ prediction_text }}</h1>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
